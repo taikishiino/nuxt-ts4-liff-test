@@ -1,6 +1,27 @@
+import path from "path";
+import fs from "fs";
+
+let serverConfig = {};
+if (process.env.NODE_ENV === "development") {
+  // 開発時のみHTTPS 接続設定を構成する
+  serverConfig = {
+    port: 3000,
+    host: "localhost",
+    https: {
+      // 作成した証明書ファイルを読み込む
+      key: fs.readFileSync(path.resolve(__dirname, "localhost-key.pem")),
+      cert: fs.readFileSync(path.resolve(__dirname, "localhost.pem"))
+    }
+  };
+}
+
 export default {
+  mode: 'spa',
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
+
+  // HTTPS 接続設定を反映する
+  server: serverConfig,
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {

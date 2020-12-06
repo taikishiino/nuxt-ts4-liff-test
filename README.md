@@ -1,6 +1,6 @@
-# nuxt3-ts4-sample
+# nuxt-ts4-liff-test
 
-## Build Setup
+## QuickStart
 
 ```bash
 # install dependencies
@@ -17,4 +17,6 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Setup
+- ローカル環境で開発する方法
+https://qiita.com/sumihiro3/items/5e96954e26eda617ce2c
